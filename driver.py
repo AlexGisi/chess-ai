@@ -17,9 +17,9 @@ class Driver:
             print(f"\n{self.ci.board}\n{'white to move' if turn else 'black to move'}\n")
             try:
                 if turn: #white to move
-                    self.ci.move(self.cont1.getMove())
+                    self.ci.move(self.cont1.getMove(self.ci.board, True))
                 else:
-                    self.ci.move(self.cont2.getMove())
+                    self.ci.move(self.cont2.getMove(self.ci.board, False))
             except ValueError:
                 print("Invalid move, try again\n")
-            
+        print(self.ci.getResult())
