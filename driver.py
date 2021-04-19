@@ -22,4 +22,5 @@ class Driver:
                     self.ci.move(self.cont2.getMove(self.ci.board, False))
             except ValueError:
                 print("Invalid move, try again\n")
+        print(f"\n{self.ci.board}\n{'white to move' if turn else 'black to move'}\n")
         print(self.ci.getResult())
