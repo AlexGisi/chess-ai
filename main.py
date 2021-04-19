@@ -9,7 +9,6 @@ if __name__ == "__main__":
         args, vals = getopt.getopt(argList, short_options, long_options)
         for arg, val in args:
             if arg in ("-p", "--Play_Mode"):
-                print(len(str(val)))
                 drv = Driver(play_mode=str(val))
                 drv.run_game()
             else:
