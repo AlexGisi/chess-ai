@@ -1,26 +1,25 @@
 import chess
-from HumanController import HumanController
-from AIController import AIController
 
-class ChessInterface():
-    def __init__(self, play_mode: str = "PvP"):
+
+class ChessInterface:
+    def __init__(self):
         self.board = chess.Board()
 
     def move(self, move: str):
         move = self.board.parse_san(move)
-        if move in self.getLegalMoves():
+        if move in self.get_legal_moves():
             self.board.push(move)
         else:
             raise Exception("Illegal Move.")
 
-    def getLegalMoves(self):
+    def get_legal_moves(self):
         return self.board.legal_moves
 
-    def getResult(self):
+    def get_result(self):
         return self.board.result()
 
-    def getTurn(self):
+    def get_turn(self):
         return self.board.turn
-    
+
     def show(self):
         print(self.board)
